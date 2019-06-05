@@ -1,0 +1,8 @@
+# uncomment to force a specific HDMI mode (this will force VGA)
+hdmi_group=2
+hdmi_mode=35
+
+[pi0]
+# Raspberry pi zero otg
+dtoverlay=dwc2
+[all]
