@@ -21,7 +21,7 @@ tee -a config.txt <<EOF
 include headlessconfig.txt
 EOF
 
-tee -a wpa_supplicant.conf <<EOF
+tee wpa_supplicant.conf <<EOF
 country=us
 update_config=1
 ctrl_interface=/var/run/wpa_supplicant
@@ -38,5 +38,9 @@ CMD="$(cat cmdline.txt)"
 commands=($CMD)
 for command in $CMD
 do
+    #if ["$command" == "rootwait"] 
+    #    then
+    #   echo "Add in modules-load=dwc2,g_ether"
+    #fi
     echo $command
 done
